@@ -44,7 +44,7 @@ export default function Home() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>The Legend of Zelda</h1>
+            <h1>The Super Smash Bros Ultimate</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={function (e) {
