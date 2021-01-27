@@ -3,11 +3,12 @@ import db from '../db.json'
 import Widget from '../src/components/Widget'
 import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
+import Button from '../src/components/Button'
 import GitHubCorner from '../src/components/GitHubCorner'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
 import Head from 'next/head'
 import QuizLogo from '../src/components/QuizLogo'
+import Input from '../src/components/Input'
 
 const Title = styled.h1`
   font-size: 50px;
@@ -51,15 +52,17 @@ export default function Home() {
               e.preventDefault()
               router.push(`/quiz?name=${name}`)
             }}>
-              <input
+              <Input
+                name="nomeDoUsuario"
                 onChange={function (e) {
                   setName(e.target.value)
                 }}
                 placeholder="Diz ai seu nome"
+                value={name}
               />
-              <button type="submit" disabled={name.length === 0}>
+              <Button type="submit" disabled={name.length === 0}>
                 Jogar {name}
-              </button>
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
@@ -67,6 +70,8 @@ export default function Home() {
         <Widget>
           <Widget.Content>
             <h1>Quizes da Galera</h1>
+
+            <p>Testando conhecimentos em NextJS</p>
           </Widget.Content>
         </Widget>
 
